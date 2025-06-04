@@ -1,0 +1,103 @@
+.projectDetail {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+  
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #222;
+      }
+  
+      p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+  
+      .projectInfo,
+      .sellerInfo {
+        background-color: #fdfdfd;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          margin: 0;
+          strong {
+            color: #333;
+            font-weight: 500;
+          }
+        }
+  
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+  
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+          }
+  
+          span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #222;
+          }
+        }
+      }
+  
+      .bidSection {
+        display: flex;
+        justify-content: flex-end;
+  
+        button {
+          padding: 12px 24px;
+          font-size: 1rem;
+          font-weight: 500;
+          color: #fff;
+          background-color: #3b82f6;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover:not(:disabled) {
+            background-color: #2563eb;
+          }
+  
+          &:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+  

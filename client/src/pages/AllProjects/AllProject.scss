@@ -1,0 +1,77 @@
+.allProjects {
+    .container {
+      .breadcrumbs {
+        font-size: 13px;
+        color: gray;
+      }
+  
+      h1 {
+        font-size: 28px;
+        margin: 10px 0;
+      }
+  
+      p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+  
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+  
+        .left {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+  
+          input {
+            width: 80px;
+            padding: 5px;
+          }
+  
+          button {
+            padding: 6px 10px;
+            cursor: pointer;
+          }
+        }
+  
+        .right {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+  
+          .rightMenu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 10;
+  
+            span {
+              cursor: pointer;
+              font-size: 14px;
+  
+              &:hover {
+                color: #1dbf73;
+              }
+            }
+          }
+        }
+      }
+  
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+  }  

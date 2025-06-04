@@ -1,0 +1,42 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content wrapper for Outlet */
+.content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Navbar & Footer */
+.navbar, .footer {
+  width: 100%;
+}
+
+/* Utility class for links */
+.link {
+  text-decoration: none;
+  color: inherit;
+}

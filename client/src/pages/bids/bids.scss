@@ -1,0 +1,106 @@
+.bids-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+
+  .bids-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .bid-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bid-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 90px; 
+  }
+
+  .bidder-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #19b372;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 2px 0 0 0;
+      color: #444;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .accept-btn,
+    .reject-btn,
+    .assign-btn {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .accept-btn {
+      background-color: #4caf50;
+      color: white;
+
+      &:hover:enabled {
+        background-color: #43a047;
+      }
+    }
+
+    .reject-btn {
+      background-color: #f44336;
+      color: white;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+
+    .assign-btn {
+      background-color: #2196f3;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        background-color: #1976d2;
+      }
+    }
+  }
+}

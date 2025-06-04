@@ -1,0 +1,84 @@
+.orders {
+  display: flex;
+  justify-content: center;
+  color: #555;
+
+  .container {
+    width: 1400px;
+    padding: 50px 0px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: #1dbf73;
+        color: white;
+        font-weight: 500;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse; // Ensures table borders don't have gaps
+
+      tr {
+        height: 50px;
+        border-bottom: 1px solid #ddd; // Adds a separator line between rows
+        th {
+          text-align: left;
+          padding: 10px;
+        }
+        td {
+          padding: 10px;
+
+          sup {
+            font-size: 12px;
+          }
+
+          .image {
+            width: 50px;
+            height: 25px;
+            object-fit: cover;
+          }
+
+          .message {
+            width: 25px;
+            cursor: pointer;
+          }
+
+          .status-button {
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+            background-color: transparent;
+          }
+
+          .sales {
+            color: #ff5f00; // Orange for sales amount
+            font-weight: bold;
+          }
+
+          .delete-icon {
+            cursor: pointer;
+            color: red;
+            font-size: 18px;
+            display: inline-block;
+            margin-left: 15px;
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: #f7f7f7;
+        }
+      }
+    }
+  }
+}

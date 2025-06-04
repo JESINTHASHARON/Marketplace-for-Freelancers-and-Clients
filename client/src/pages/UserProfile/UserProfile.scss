@@ -1,0 +1,140 @@
+.user-profile {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+  
+      .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border: 5px solid #ff7b54;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      .profile-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+  
+        .profile-card {
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          padding: 15px;
+          margin: 8px 0;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          cursor: default;
+  
+          .icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #ff7b54;
+          }
+  
+          p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0;
+          }
+  
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 20px 0;
+    }
+  
+    .gig-card,
+    .review-card {
+      background-color: #fff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+  
+      h4 {
+        margin: 0 0 5px 0;
+        color: #333;
+      }
+  
+      p {
+        color: #555;
+        font-size: 1rem;
+      }
+    }
+  
+    .gig-card {
+      background-color: #fffbf3;
+      border-left: 5px solid #ff7b54;
+    }
+  
+    .review-card {
+      background-color: #f1f8ff;
+      border-left: 5px solid #58a6ff;
+    }
+  
+    .loading,
+    .error {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 20px;
+      color: #d9534f;
+    }
+  
+    @media (max-width: 768px) {
+      padding: 15px;
+  
+      .profile-section {
+        .profile-details {
+          width: 100%;
+          max-width: 100%;
+        }
+  
+        .profile-card {
+          flex-direction: column;
+          align-items: flex-start;
+  
+          .icon {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+  

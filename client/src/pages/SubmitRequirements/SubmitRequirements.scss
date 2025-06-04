@@ -1,0 +1,38 @@
+// SubmitRequirements.scss
+.submitRequirements {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  
+    .container {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      textarea {
+        height: 200px;
+        padding: 10px;
+        font-size: 16px;
+      }
+  
+      .error {
+        color: red;
+      }
+  
+      button {
+        background-color: #1dbf73;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+  
+      button:hover {
+        background-color: #17a463;
+      }
+    }
+  }
+  

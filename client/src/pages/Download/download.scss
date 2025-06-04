@@ -1,0 +1,37 @@
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .download-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .download-title-highlight {
+    color: green;
+  }
+  
+  .download-link-wrapper {
+    margin-top: 20px;
+    word-break: break-word;
+    max-width: 90%;
+  }
+  
+  .download-link {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .download-warning {
+    margin-top: 20px;
+    color: orange;
+    font-size: 16px;
+  }
+  

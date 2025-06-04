@@ -1,0 +1,143 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  username  String   @unique                      // Unique username
+  email     String   @unique                      // Unique email
+  password  String                                // Password (hashed)
+  img       String?                               // Optional profile image
+  country   String                                // Required country field
+  phone     String?                               // Optional phone number
+  desc      String?                               // Optional description
+  isSeller  Boolean  @default(false)              // Default false for non-sellers
+  createdAt DateTime @default(now())              // Auto-generated timestamp
+  updatedAt DateTime @updatedAt                   // Auto-updated timestamp
+}
+model Review {
+  id      Int     @id @default(autoincrement())  // Auto-increment primary key
+  gigId   Int                                  // Foreign key reference (change as needed)
+  userId  Int                                  // Foreign key reference (change as needed)
+  star    Int     @default(1)                   // Restrict values between 1-5
+  desc    String                              // Required review description
+  createdAt DateTime @default(now())           // Auto-generated timestamp
+  updatedAt DateTime @updatedAt                // Auto-updated timestamp
+}
+model Order {
+  id              Int      @id @default(autoincrement())
+  gigId           Int
+  buyerId         Int
+  sellerId        Int
+  img             String
+  title           String
+  price           Float
+  requirements    String?
+  workUrl         String?
+  isPaid          Boolean  @default(false)
+  isCompleted     Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  paymentIntent   String?
+}
+
+
+model Message {
+  id             Int      @id @default(autoincrement())  // Auto-increment primary key
+  conversationId String                                      // Reference to conversation (adjust type if needed)
+  userId         Int                                      // Reference to user (adjust type if needed)
+  desc           String                                   // Message content
+  createdAt      DateTime @default(now())                // Auto-generated timestamp
+  updatedAt      DateTime @updatedAt                     // Auto-updated timestamp
+}
+model Gig {
+  id              Int      @id @default(autoincrement())  // Auto-increment primary key
+  userId          Int                                      // Foreign key reference to user (adjust type if needed)
+  title           String                                   // Required gig title
+  desc            String                                   // Detailed description
+  totalStars      Int      @default(0)                    // Total stars received
+  starNumber      Int      @default(0)                    // Number of reviews
+  cat             String                                   // Category of the gig
+  price           Float                                    // Price of the gig
+  cover           String                                   // Cover image URL
+  images          String[]                                 // Array of image URLs (optional)
+  shortTitle      String                                   // Short title for gig
+  shortDesc       String                                   // Short description
+  deliveryTime    Int                                      // Delivery time in days                              // Number of revisions allowed
+  features        String[]                                 // Array of features (optional)
+  sales          Int      @default(0)                     // Number of sales (default is 0)
+  createdAt      DateTime @default(now())                 // Auto-generated timestamp
+  updatedAt      DateTime @updatedAt                      // Auto-updated timestamp
+}
+
+model Project {
+  id              Int      @id @default(autoincrement())
+  userId          Int      // ID of the user who posted the project
+  title           String
+  description     String
+  category        String
+  budget          Int
+  images          String[] @default([])
+  numberOfModules Int
+  isCompleted     Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Bid {
+  id            Int      @id @default(autoincrement())
+  amount        Int
+  status        String   @default("PENDING") // values: PENDING, ACCEPTED, REJECTED
+  projectId     Int      // ID of the project this bid belongs to
+  freelancerId  Int      // ID of the freelancer who placed the bid
+  createdAt     DateTime @default(now())
+}
+
+
+model Module {
+  id            Int       @id @default(autoincrement())
+  name          String
+  details       String
+  deadlineDays  Int
+  projectURL    String    @default("")
+  status        String    @default("WAITING")
+  projectId     Int
+  updateCount   Int       @default(0)
+  createdAt     DateTime  @default(now())
+  images        String[]  // ARRAY OF IMAGE URLs
+  amount        Float     @default(0)
+  paymentIntent String?   // Optional field to store the Stripe Payment Intent ID
+}
+
+
+model ProjectAssignment {
+  id           Int      @id @default(autoincrement())
+  projectId    Int                                        // ID of the project
+  buyerId      Int                                        // ID of the user who posted the project
+  sellerId     Int                                        // ID of the freelancer who is assigned
+  assignedAt   DateTime @default(now())
+  status       String   @default("Assigned")              // Assigned, InProgress, Delivered, Completed, Cancelled, etc.
+  deadline     DateTime                                   // Final agreed deadline
+  notes        String?                                    // Optional instructions or requirements
+}
+
+model Conversation {
+  id           String   @id @unique                      // Unique conversation ID
+  sellerId     Int                                      // Foreign key reference to seller (adjust type if needed)
+  buyerId      Int                                      // Foreign key reference to buyer (adjust type if needed)
+  readBySeller Boolean                                  // Whether the seller has read the last message
+  readByBuyer  Boolean                                  // Whether the buyer has read the last message
+  lastMessage  String?                                  // Last message content (optional)
+  createdAt    DateTime @default(now())                // Auto-generated timestamp
+  updatedAt    DateTime @updatedAt                     // Auto-updated timestamp
+}
