@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
-import "./Download.scss"; // Import the external style
+import "./download.scss"; // Import the external style
 
 const Download = () => {
   const { id } = useParams();
