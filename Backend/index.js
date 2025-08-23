@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/", async (req, res) => {
     try {
-        const users = await prisma.user.findMany();
+        const users = await prisma.User.findMany();
         res.json(users);
     } catch (error) {
         console.error("Database connection error:", error);
