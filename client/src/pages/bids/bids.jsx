@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
-import "./Bids.scss";
+import "./bids.scss";
 
 const Bids = () => {
   const { projectId, projectTitle } = useParams();
