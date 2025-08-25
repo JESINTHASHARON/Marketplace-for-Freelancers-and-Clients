@@ -61,7 +61,6 @@ const Checkout= () => {
       confirmParams: {
         // Make sure to change this to your payment completion page
         return_url: "https://marketplace-for-freelancers-and-cli-gamma.vercel.app/success2",
-",
       },
     });
 
