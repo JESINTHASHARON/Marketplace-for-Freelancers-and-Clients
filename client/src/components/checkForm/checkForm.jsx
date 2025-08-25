@@ -60,7 +60,8 @@ const Checkout= () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5173/success2",
+        return_url: "https://marketplace-for-freelancers-and-cli-gamma.vercel.app/success2",
+",
       },
     });
 
