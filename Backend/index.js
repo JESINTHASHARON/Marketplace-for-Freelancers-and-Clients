@@ -1,6 +1,5 @@
 import express from "express";
 import dotenv from "dotenv";
-import prisma from "./utils/prismaClient.js"; 
 import userRoute from "./routes/user.routes.js"
 import reviewRoute from "./routes/review.routes.js";
 import orderRoute from "./routes/order.routes.js";
@@ -13,6 +12,8 @@ import projectRoutes from "./routes/project.routes.js"
 import bidRoutes from "./routes/bid.routes.js";
 import moduleRoutes from "./routes/module.routes.js";
 import cors from "cors";
+import getPrismaInstance from "./utils/prismaClient.js";
+const prisma = getPrismaInstance();
 
 dotenv.config();
 
