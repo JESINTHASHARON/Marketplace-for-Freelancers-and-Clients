@@ -1,3 +1,40 @@
+<p>A full-stack freelance marketplace where clients can post projects and freelancers can bid, chat, and manage payments.</p><br>
+<p>Built With: </p>
+<p>⮕Backend: Node.js, Express.js, Prisma ORM, PostgreSQL, Stripe</p>
+<p>⮕Frontend: React + Vite, Axios, React Query</p>
+<p>⮕Deployment: Render (backend), Vercel (frontend)</p><br>
+<p>🚀 Features</p>
+<p>🔸User authentication (JWT + cookies)</p>
+<p>🔸Project & gig management</p>
+<p>🔸Bidding system</p>
+<p>🔸Conversations & messaging</p>
+<p>🔸Review</p>
+<p>🔸Stripe payments & order handling</p><br>
+  
+<p><b>Backend Setup (Server)</b></p>
+<p>1. Go inside the Backend/ folder:</p>
+<p><em>cd Backend</em></p>
+<p>2. Install dependencies</p>
+<p><em>npm install</em></p>
+<p>3. Run Prisma setup</p>
+<p><em>npx prisma generate      # Generates Prisma client<br>
+npx prisma migrate dev   # Applies migrations to your DB</em></p>
+<p>4. Run backend server</p>
+<p><em>npm start</em></p>
+<p>5. (Optional) Open Prisma Studio (DB UI)</p>
+<p><em>npm prisma studio</em>  (#Opens at http://localhost:5555)</p><br>
+
+<p><b>Frontend Setup</b></p>
+<p>1. Go inside the client/ folder</p>
+<p><em>cd client</em></p>
+<p>2. Install dependencies</p>
+<p><em>npm install</em></p>
+<p>3. Run frontend</p>
+<p><em>npm run dev</em></p><br>
+
+<p><i>Note: Create env files, with database url, port number, jwt key, stripe publish and stripe secret with your own credentials</i></p><br><br>
+
+<b>OUTCOMES:</b><br>
 <b>Home Page</b>
 <img width="1918" height="908" alt="image" src="https://github.com/user-attachments/assets/f75fd41b-cd30-48cd-a69c-dfa2547bc451" />
 <br><br>
