@@ -37,7 +37,10 @@ app.use(express.json())
 //app.use(cors({origin:"http://localhost:5173",credential:true}))
 
 app.use(cors({
-    origin: "http://localhost:5173",  // Must match exactly
+    origin: [
+        "http://localhost:5173", 
+        "https://marketplace-for-freelancers-and-cli-gamma.vercel.app" // 👈 your actual Vercel frontend
+    ],
     credentials: true,  // Needed for cookies and auth headers
     methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"],  // Important headers
