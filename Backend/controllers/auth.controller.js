@@ -57,7 +57,7 @@ export const login = async (req, res, next) => {
     }
 
     // Check if JWT secret key is available
-    if (!process.env.JWT_KEY) {
+    if (!process.env.jWT_KEY) {
       console.error("JWT_KEY is missing in environment variables!");
       return res.status(500).json({ message: "Server configuration error!" });
     }
@@ -68,7 +68,7 @@ export const login = async (req, res, next) => {
         id: user.id,
         isSeller: user.isSeller,
       },
-      process.env.JWT_KEY,
+      process.env.jWT_KEY,
       { expiresIn: "2h" } // Token expires in 2 hours
     );
 
